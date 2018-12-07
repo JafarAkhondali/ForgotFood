@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Forgotfood</string>
+    <string name="title_home">خانه</string>
+    <string name="title_dashboard">داشبورد</string>
+    <string name="title_notifications">هشدار ها</string>
+    <string name="sample_about_page">
+        سلام، \n
+        این اپلیکیشن برای سلف سرویس های دانشگاه شیراز نوشته شده.
+        \n
+
+        کار با این اپلیکیشن خیلی سادس
+        \n
+
+        عملا فقط کافیه کسایی که میخوای بتونن غذات رو بگیرن رو به لیست اضافه کنی.
+        \n
+
+        کسی هم که میخواد غذات رو بگیره باید شماره سلف مورد نظر رو برای تو پیامک کنه.
+        \n
+        با اینکار، اپلیکیشن از گوشی تو کد
+        #1#
+        رو برای سلف پیامک میکنه و دوستت میتونه قبض غذات رو
+        \n
+        دریافت کنه
+
+
+    </string>
+</resources>

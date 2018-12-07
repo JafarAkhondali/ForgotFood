@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                                   android:layout_height="100dp"
+                                                   android:id="@+id/relativeLayout"
+                                                   android:focusable="true"
+                                                   android:clickable="true"
+
+>
+
+    <ImageView
+            android:layout_width="100dp"
+            app:srcCompat="@drawable/ic_hungry_man"
+            android:id="@+id/icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+
+            android:padding="5dp"
+            android:layout_height="match_parent" tools:ignore="VectorDrawableCompat"
+            />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tv_fullname"
+              android:textSize="18sp"
+              android:hint="FullName"
+              android:textDirection="ltr"
+              app:layout_constraintStart_toEndOf="@id/icon"
+              android:textStyle="bold" tools:layout_editor_absoluteY="7dp" android:layout_marginStart="20dp"/>
+
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/tv_phonenumber"
+
+              android:textSize="14sp"
+              android:hint="+98xxxxxxxx"
+              app:layout_constraintBottom_toBottomOf="@+id/icon"
+
+              android:layout_marginBottom="32dp" app:layout_constraintStart_toEndOf="@+id/icon"
+              android:layout_marginStart="24dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
