@@ -28,4 +28,3 @@
 دانلود:    
 https://github.com/JafarAkhondali/ForgotFood/releases/download/v1.0.0/app.apk
 </p>
-t
