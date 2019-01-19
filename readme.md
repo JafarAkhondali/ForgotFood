@@ -1,3 +1,10 @@
+<div style="text-align:center">
+  <p align="center">
+<img src="https://user-images.githubusercontent.com/11364402/51419303-9b8cf600-1b9e-11e9-879e-8b5f64cd6f14.png" width="300px" style="display:inline-block;margin-left: 30px;margin-right:30px">
+<img src="https://user-images.githubusercontent.com/11364402/51419302-992a9c00-1b9e-11e9-8ee3-61b270b3daea.png" width="300px" style="display:inline-block;margin-left: 30px;margin-right:30px">
+  </p>
+</div>
+
 
 <p  lang="fa" dir="rtl" align="right">
 سلام،
@@ -21,3 +28,4 @@
 دانلود:    
 https://github.com/JafarAkhondali/ForgotFood/releases/download/v1.0.0/app.apk
 </p>
+t
