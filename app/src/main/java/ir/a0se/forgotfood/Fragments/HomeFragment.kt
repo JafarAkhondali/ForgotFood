@@ -22,9 +22,13 @@ import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionDeniedResponse
 import com.karumi.dexter.listener.PermissionGrantedResponse
 import android.app.Activity.RESULT_OK
+import android.telephony.SmsMessage
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.listener.PermissionRequest
 import ir.a0se.forgotfood.Activities.HungryActivity
+import android.provider.Telephony
+import com.karumi.dexter.MultiplePermissionsReport
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 
 
 const val PICK_CONTACT_REQUEST = 1  // The request code
@@ -52,6 +56,7 @@ class HomeFragment : Fragment(){
 
         val v = inflater.inflate(R.layout.home_fragment, container, false)
 
+        askPermissions()
         viewManager = LinearLayoutManager(activity)
         viewAdapter = HungryAdapter(
             hungriesArray
@@ -98,6 +103,30 @@ class HomeFragment : Fragment(){
 
         refreshData()
         return v
+    }
+
+    private fun askPermissions() {
+        Dexter.withActivity(activity)
+            .withPermissions(
+                Manifest.permission.RECEIVE_SMS,
+                Manifest.permission.SEND_SMS
+            )
+            .withListener(object : MultiplePermissionsListener {
+                override fun onPermissionRationaleShouldBeShown(
+                    permissions: MutableList<PermissionRequest>?,
+                    token: PermissionToken?
+                ) {
+
+                }
+
+                override fun onPermissionsChecked(report: MultiplePermissionsReport?) {
+//                    if(report != null){
+//                        if(report.isAnyPermissionPermanentlyDenied)
+//                            context!!.toast(":|")
+//                    }
+                }
+
+            }).check()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

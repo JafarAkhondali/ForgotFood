@@ -24,11 +24,23 @@ class DatabaseHandler(ctx: Context) : ManagedSQLiteOpenHelper(ctx, "MyDatabase",
             "contact_id" to INTEGER,
             "phoneNumber" to TEXT,
             "fullname" to TEXT)
+
+        db.createTable("Logs", true,
+            "id" to SqlType.create("INTEGER PRIMARY KEY AUTOINCREMENT"),
+            "contact_id" to INTEGER,
+            "to_number" to TEXT,
+            "from_number" to TEXT,
+            "fullname" to TEXT,
+            "timestamp" to TEXT)
+
+
+
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         // Here you can upgrade tables, as usual
-//        db.dropTable("Hungries", true)
+        // db.dropTable("Hungries", true)
     }
 }
 

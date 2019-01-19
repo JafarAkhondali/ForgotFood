@@ -8,6 +8,10 @@ import android.telephony.SmsManager
 import android.telephony.SmsMessage
 import android.util.Log
 import android.widget.Toast
+import ir.a0se.forgotfood.Models.Hungry
+import org.jetbrains.anko.toast
+import saman.zamani.persiandate.PersianDate
+import saman.zamani.persiandate.PersianDateFormat
 
 class SmsListener : BroadcastReceiver() {
 
@@ -15,10 +19,6 @@ class SmsListener : BroadcastReceiver() {
         try {
             val sms = SmsManager.getDefault()
             sms.sendTextMessage(phoneNumber, CART_HOLDER_PERSON_NUMBER, message, null, null)
-            Toast.makeText(
-                con, "Sending",
-                Toast.LENGTH_SHORT
-            ).show()
         } catch (ex: Exception) {
             Toast.makeText(
                 con, "ex: " + ex.message,
@@ -39,16 +39,48 @@ class SmsListener : BroadcastReceiver() {
             if (bundle != null) {
                 val pdusObj = bundle.get("pdus") as Array<Any>
                 for (i in pdusObj.indices) {
+                    
                     val currentMessage = SmsMessage.createFromPdu(pdusObj[i] as ByteArray)
+
+
                     val phoneNumber = currentMessage.displayOriginatingAddress
+                    
                     val message = currentMessage.displayMessageBody
                     mobile = phoneNumber.replace("\\s".toRegex(), "")
-                    if (mobile.endsWith(HUNGRY_PERSON_NUMBER)) {
-                        body = message.replace("\\s".toRegex(), "+")
-                        //if(body.matches("\\d+")){
-                        sendSMS(context, body, "#1#")
-                        //}
+
+                    Hungry.getAll(context).forEach {
+                        if (it.phoneNumber.replace(" ","").endsWith(mobile.replace("+98",""))) {
+                            body = message.replace("\\s".toRegex(), "+")
+                            if(body.matches("\\d+".toRegex())){
+                                sendSMS(context, body, "#1#")
+                                context.toast("گرسنه ای سیر گشت :)")
+
+                                val persianTime = PersianDate()
+                                val dateFormatter = PersianDateFormat("l، j F")
+                                val timeFormatter = PersianDateFormat("H:i:s")
+
+                                val timeString = dateFormatter.format(persianTime) + " ساعت: " + timeFormatter.format(persianTime)
+
+
+                                val from_number= it.phoneNumber
+                                val to_number = body
+
+
+                                val log = ir.a0se.forgotfood.Models.Log(
+                                    timestamp = timeString,
+                                    from_number = from_number,
+                                    to_number = to_number,
+                                    fullname = it.fullname,
+                                    contactId = it.contactId
+                                )
+
+
+                                log.save(context)
+
+                            }
+                        }
                     }
+
                 } // end for loop
             } // bundle is null
 
@@ -59,11 +91,7 @@ class SmsListener : BroadcastReceiver() {
     }
 
     companion object {
-
-        private val HUNGRY_PERSON_NUMBER = "9013906827"
-        private val CART_HOLDER_PERSON_NUMBER = "+989164911580"
-
-
+        private val CART_HOLDER_PERSON_NUMBER = null;
         private val SMS_RECEIVED = "android.provider.Telephony.SMS_RECEIVED"
         private val TAG = "SMSBroadcastReceiver"
     }

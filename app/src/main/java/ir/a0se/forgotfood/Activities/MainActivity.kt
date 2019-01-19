@@ -8,6 +8,7 @@ import com.tbuonomo.morphbottomnavigation.MorphBottomNavigationView
 import ir.a0se.forgotfood.R
 import ir.a0se.forgotfood.Fragments.AboutFragment
 import ir.a0se.forgotfood.Fragments.HomeFragment
+import ir.a0se.forgotfood.Fragments.LogsFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -34,6 +35,8 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
+                val logsFragment= LogsFragment.newInstance()
+                openFragment(logsFragment)
                 return@OnNavigationItemSelectedListener true
             }
         }

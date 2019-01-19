@@ -23,7 +23,7 @@ class HungryActivity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.tv_hungry_fullname).text = hungry.fullname
         findViewById<TextView>(R.id.tv_hungry_number).text = hungry.phoneNumber
-        findViewById<Switch>(R.id.sw_hungry_active).isEnabled = true
+//        findViewById<Switch>(R.id.sw_hungry_active).isEnabled = true
 
         findViewById<Button>(R.id.btn_delete).setOnClickListener {
             Hungry.delete(applicationContext,id)

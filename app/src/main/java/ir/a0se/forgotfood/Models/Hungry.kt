@@ -6,7 +6,7 @@ import org.jetbrains.anko.db.*
 import org.jetbrains.anko.toast
 
 //import com.github.
-val TALBE_NAME = "Hungries"
+private val TALBE_NAME = "Hungries"
 data class Hungry(
     public var id: String="-1",
     public var contactId: String = "-1",

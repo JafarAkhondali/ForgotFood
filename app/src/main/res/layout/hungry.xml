@@ -22,14 +22,14 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             app:layout_constraintHorizontal_bias="0.502" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/tv_hungry_fullname"/>
-    <Switch
-            android:text="   وضعیت   "
-            android:textDirection="rtl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/sw_hungry_active" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            android:layout_marginTop="116dp" app:layout_constraintTop_toBottomOf="@+id/tv_hungry_number"/>
+    <!--<Switch-->
+            <!--android:text="   وضعیت   "-->
+            <!--android:textDirection="rtl"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/sw_hungry_active" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"-->
+            <!--app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"-->
+            <!--android:layout_marginTop="116dp" app:layout_constraintTop_toBottomOf="@+id/tv_hungry_number"/>-->
     <Button
             android:text="حدف"
             android:layout_width="wrap_content"

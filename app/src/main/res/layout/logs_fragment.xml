@@ -10,9 +10,13 @@
             android:orientation="vertical"
             android:layout_height="match_parent"
     >
-        <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="اگر عمری بود این بخش تکمیل میشود :|"
-        />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_logs_list"
+                android:layout_width="match_parent"
+                android:foregroundGravity="top"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="match_parent"/>
     </LinearLayout>
 
 

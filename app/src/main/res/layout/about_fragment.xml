@@ -9,10 +9,36 @@
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_height="match_parent"
+            android:paddingEnd="25dp"
+            android:paddingStart="25dp"
+            android:paddingTop="25dp"
     >
-        <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/sample_about_page"
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:text="@string/sample_about_page"
         />
+
+        <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="https://github.com/JafarAkhondali/ForgotFood"
+                android:autoLink="web" android:id="@+id/infoTxtCredits"
+                android:linksClickable="true"/>
+
+
+        <LinearLayout android:layout_marginTop="20dp" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        >
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="@string/contanct_me_label"/>
+
+            <TextView android:id="@+id/tv_contact_me"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="@string/contact_me"
+                      android:linksClickable="true"
+            />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 
